@@ -2,6 +2,12 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
+<form method="post" class="my-class">
+    {{ my_formset|crispy }}
+</form>
+
 {% load crispy_forms_filters %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -41,8 +47,6 @@
                                 </div>
                             {% endfor %}
                         {% endif %}
-                       
-                        
                         <div>
                             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Username</label>
                             <input type="{{ form.username.field.widget.input_type }}" name="{{ form.username.name }}" id='{{ form.username.id_for_label }}' placeholder="Username" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />     
